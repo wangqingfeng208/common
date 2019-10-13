@@ -1,5 +1,6 @@
 package com.wangqingfeng.utils;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import org.junit.Test;
@@ -52,5 +53,12 @@ public class DateUtilTest {
 		sql = sql.replace("{2}", DateUtil.getStringByDate(fullMonth));
 		System.out.println(sql);
 	
+	}
+	@Test
+	public void testGetDate() {
+		Calendar c = Calendar.getInstance();
+		c.set(2010, 0, 1);
+		Date date = DateUtil.getDate(c.getTime(), new Date());
+		System.out.println(date);
 	}
 }

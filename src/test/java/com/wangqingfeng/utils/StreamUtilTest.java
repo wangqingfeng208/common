@@ -1,6 +1,5 @@
 package com.wangqingfeng.utils;
 
-import static org.junit.Assert.*;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -38,7 +37,8 @@ public class StreamUtilTest {
 	 */
 	@Test
 	public void testReadTextFileFile() {
-		
+		String str = StreamUtil.readTextFile(new File("C:\\Users\\86156\\Desktop\\新建文本文档.txt"));
+		System.out.println(str);
 	}
 
 }

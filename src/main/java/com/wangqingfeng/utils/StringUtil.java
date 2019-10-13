@@ -12,7 +12,7 @@ public class StringUtil {
 	//方法1：判断源字符串是否有值，空引号(空白字符串)也算没值 (5分)
 	public static boolean hasLength(String src){
 	//TODO 实现代码
-		if(src != null && src != "") {
+		if(src != null && src.length() > 0) {
 			return true;
 		}else {
 			return false;
@@ -21,8 +21,9 @@ public class StringUtil {
 	//方法2：判断源字符串是否有值，空引号(空白字符串)和空格也算没值 (5分)
 	public static boolean hasText(String src){
 	//TODO 实现代码
-		src = src.trim();
-		boolean b = hasLength(src);
+		String str = src.trim();
+		System.out.println(str);
+		boolean b = hasLength(str);
 		return b;
 	}
 	//方法3：返回参数length个中文汉字字符串，字符集必须在GB2312(相当于中文简体)范围内，例如“中呀被”(5分)

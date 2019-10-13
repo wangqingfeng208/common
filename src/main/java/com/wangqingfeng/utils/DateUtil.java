@@ -65,5 +65,17 @@ public class DateUtil {
 		String str = sdf.format(src);
 		return str;
 	}
-
+	/**
+	 * 	返回个在minDate和maxDAte之间的随机日期
+	 */
+	public static Date getDate(Date minDate ,Date maxDate) {
+		//1970年至指定最小日期的毫秒数为最小毫秒数
+		long min = minDate.getTime();
+		//1970年至指定最大日期的毫秒数为最大毫秒数
+		long max = maxDate.getTime();
+		//在最大值和最小值之间随机一任意数为随机毫秒数
+		long x =(long) ((Math.random() * (max -min +1)) +min);
+		//将随机毫秒数转换为Date时间并返回
+		return new Date(x);
+	}
 }
