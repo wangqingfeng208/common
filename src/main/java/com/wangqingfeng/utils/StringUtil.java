@@ -100,4 +100,12 @@ public class StringUtil {
 		String regex="1[35678][1356789]\\d{8}";
 		return src.matches(regex);
 	}
+	
+	/**
+	 * 	判断是否是数字
+	 */
+	public static boolean isNumber(String str) {
+		String regex = "^[0-9]+(.[0-9]+)?$";
+		return str.matches(regex);
+	}
 }
