@@ -87,5 +87,17 @@ public class StringUtil {
 		     e.printStackTrace();
 		}
 		return str;
-		}
+	}
+	// 验证是否邮箱
+	public static boolean isEmail(String src) {
+		// 定义邮箱的规则
+		String regex = "[A-z0-9]+\\@[A-z0-9]+\\.(com|cn|net)";
+		return src.matches(regex);
+	}
+
+	// 验证是否手机号
+	public static boolean isMobile(String src) {
+		String regex="1[35678][1356789]\\d{8}";
+		return src.matches(regex);
+	}
 }

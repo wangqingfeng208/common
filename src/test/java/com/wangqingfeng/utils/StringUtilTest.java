@@ -54,7 +54,25 @@ public class StringUtilTest {
 	 */
 	@Test
 	public void testRandomChineseString() {
-		fail("Not yet implemented");
+		String str = StringUtil.randomChineseString();
+		System.out.println(str);
 	}
-
+	
+	/**
+	 * Test method for {@link com.wangqingfeng.utils.StringUtil#isEmail()}.
+	 */
+	@Test
+	public void testIsEmail() {
+		boolean b = StringUtil.isEmail("15122617496@163.com");
+		System.out.println(b);
+	}
+	
+	/**
+	 * Test method for {@link com.wangqingfeng.utils.StringUtil#isMobile()}.
+	 */
+	@Test
+	public void testIsMobile() {
+		boolean b = StringUtil.isMobile("15122617496");
+		System.out.println(b);
+	}
 }
