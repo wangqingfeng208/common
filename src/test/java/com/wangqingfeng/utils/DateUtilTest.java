@@ -56,9 +56,14 @@ public class DateUtilTest {
 	}
 	@Test
 	public void testGetDate() {
-		Calendar c = Calendar.getInstance();
-		c.set(2010, 0, 1);
-		Date date = DateUtil.getDate(c.getTime(), new Date());
-		System.out.println(date);
+		Date date = DateUtil.getDate(new Date(110, 0, 1), new Date());
+		String str = DateUtil.getStringByDate(date);
+		System.out.println(str);
+	}
+	@Test
+	public void testGetCalendarByDate() {
+		Calendar calendar = DateUtil.getCalendarByDate(new Date(110, 0, 1));
+		int i = calendar.get(Calendar.YEAR);
+		System.out.println(i);
 	}
 }

@@ -69,9 +69,9 @@ public class DateUtil {
 	 * 	返回个在minDate和maxDAte之间的随机日期
 	 */
 	public static Date getDate(Date minDate ,Date maxDate) {
-		//1970年至指定最小日期的毫秒数为最小毫秒数
+		//1900年至指定最小日期的毫秒数为最小毫秒数
 		long min = minDate.getTime();
-		//1970年至指定最大日期的毫秒数为最大毫秒数
+		//1900年至指定最大日期的毫秒数为最大毫秒数
 		long max = maxDate.getTime();
 		//在最大值和最小值之间随机一任意数为随机毫秒数
 		long x =(long) ((Math.random() * (max -min +1)) +min);
@@ -105,5 +105,13 @@ public class DateUtil {
 			age--;
 		}
 		return age;
+	}
+	/**
+	 * 	将日期类初始化为日历类
+	 */
+	public static Calendar getCalendarByDate(Date date) {
+		Calendar c = Calendar.getInstance();
+		c.setTime(date);
+		return c;
 	}
 }
