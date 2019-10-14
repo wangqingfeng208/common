@@ -1,6 +1,12 @@
 package com.wangqingfeng.utils;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @作者 王清锋
@@ -40,5 +46,22 @@ public class FileUtil {
 		String str = System.getProperty("user.home");
 		return new File(str);
 	}
-
+	
+	/**
+	 * 	从文档读取一行
+	 */
+	public static List nextLind(InputStream str) {
+		String string="";
+		List<String> list=new ArrayList<String>();
+		BufferedReader bfr=new BufferedReader(new InputStreamReader(str));
+		try {
+			while ((string=bfr.readLine())!=null) {
+				list.add(string);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
 }
